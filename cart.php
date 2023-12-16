@@ -42,7 +42,7 @@ include('functions/common_function.php');
           <a class="nav-link" href="display_all.php">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="./user_area/user_registration.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
@@ -74,7 +74,7 @@ cart();
                     <a class="nav-link" href="#">Welcome Guest</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="./user_area/user_login.php">Login</a>
                 </li>
             </ul>
         </nav>
@@ -168,7 +168,7 @@ cart();
         <input type='submit' name='continue_shopping' id='' 
         value='Continue Shopping' class='bg-info px-3 py-2 border-0 mx-3'>
         <button class='bg-secondary px-3 py-2 border-0'>
-        <a href='checkout.php' class='text-light'>Check Out</a>
+        <a href='./user_area/checkout.php' class='text-light'>Check Out</a>
         </button>";
           }else{
           echo "<input type='submit' name='continue_shopping' id='' 
