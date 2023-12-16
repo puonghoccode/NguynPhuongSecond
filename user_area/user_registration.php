@@ -87,17 +87,23 @@ if(isset($_POST['user_register'])){
     $user_contact=$_POST['user_contact'];
     $user_ip=getIPAddress();
 
-    // insert query
+    // select query
+    $select_query="SELECT * from user_table where username='$user_username' or user_email='$user_email'";
+    $result=mysqli_query($con,$select_query);
+    $row_count=mysqli_num_rows($result);
+    if($row_count>0){
+        echo "<script>alert('Username or Email already exist')</script>";
+    }else if($user_password!=$conf_user_password){
+        echo "<script>alert('Password do not match')</script>";
+    }else{
+        // insert query
     move_uploaded_file($user_image_tmp,"./user_images/$user_image");
     $insert_query="INSERT into user_table (username, user_email, user_password, 
     user_image, user_ip, user_address, user_mobile) values ('$user_username','$user_email',
     '$user_password','$user_image','$user_ip','$user_address','$user_contact')";
     $sql_execute=mysqli_query($con, $insert_query);
-    if($sql_execute){
-        echo "<script>alert('Data inserted successfully')</script>";
-    }else{
-        die("Connection failed: " . $con->connect_error);
     }
+
 }   
 ?>
 
