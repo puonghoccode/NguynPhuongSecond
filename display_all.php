@@ -40,7 +40,7 @@ include('functions/common_function.php');
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="cart.php">
             <i class="fa-solid fa-cart-shopping"></i>
             <sub>
             <?php 

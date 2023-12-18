@@ -126,13 +126,14 @@ cart();
                 <tr>
                     <td><?php echo $product_title ?></td>
                     <td><img class="cart_img" src="./admin_area/product_image/<?php echo $product_image1 ?>" alt=""></td>
-                    <td><input type="text" class="form-input w-50" name="quantt"></td>
+                    <td><input type="text" class="form-input w-50" name="qty"></td>
                     <?php
                     $get_ip_add = getIPAddress();
                     if(isset($_POST['update_cart'])){
-                      $quantities=$_POST['quantt'];
-                      $update_cart="UPDATE cart_details set quantity=$quantities where ip_address='$get_ip_add'";
-                      $result_product_quantity=mysqli_query($con, $update_cart);
+                      $quantities=$_POST['qty'];
+                      $update_cart = "UPDATE cart_details set quantity=$quantities where ip_address='$get_ip_add'";
+                      $result_products_quantity=mysqli_query($con, $update_cart);
+                      //$result_products_quantity=mysqli_query($con, $update_cart);
                       $total_price=$total_price*$quantities;
                     }
                     ?>
@@ -164,7 +165,7 @@ cart();
           $result=mysqli_query($con, $cart_query);
           $result_count=mysqli_num_rows($result);
           if($result_count>0){
-            echo "<h4 class='px-3'>Subtotal: <strong class='text-info'>$total_price/-</strong></h4>
+            echo "<h4 class='px-3'>Subtotal: <strong class='text-info'>$total_price</strong></h4>
         <input type='submit' name='continue_shopping' id='' 
         value='Continue Shopping' class='bg-info px-3 py-2 border-0 mx-3'>
         <button class='bg-secondary px-3 py-2 border-0'>
