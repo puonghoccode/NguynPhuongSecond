@@ -1,5 +1,6 @@
 <?php
 include('../includes/connect.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,12 @@ include('../includes/connect.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css link -->
     <link rel="stylesheet" href="../style.css">
+    <style>
+      .logo{
+        width: 8%;
+        height: 8%;
+      }
+    </style>
 </head>
 <body>
     <!-- navbar -->
@@ -51,12 +58,20 @@ include('../includes/connect.php');
     <!-- second child -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome Guest</a>
+            <li class='nav-item'>
+                    <a class='nav-link' href='#'>Welcome Guest</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./user_area/user_login.php">Login</a>
-                </li>
+            <?php 
+                if(!isset($_SESSION['username'])){
+                  echo "<li class='nav-item'>
+                  <a class='nav-link' href='user_login.php'>Login</a>
+              </li>";
+                }else{
+                  echo "<li class='nav-item'>
+                  <a class='nav-link' href='user_logout.php'>Logout</a>
+              </li>";
+                }
+                ?>
             </ul>
         </nav>
 
