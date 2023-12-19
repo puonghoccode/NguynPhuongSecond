@@ -79,7 +79,7 @@ session_start();
               </li>";
                 }else{
                   echo "<li class='nav-item'>
-                  <a class='nav-link' href='./user_area/user_logout.php'>Logout</a>
+                  <a class='nav-link' href='./user_area/logout.php'>Logout</a>
               </li>";
                 }
                 ?>
