@@ -42,13 +42,21 @@ if($quantity==0){
     $subtotal=$total_price*$quantity;
 }
 
-$insert_orders="INSERT into user_orders (order_id, amount_due, 
-invoice_number, total_products, order_date, order_status) values 
-('$order_id', '$subtotal', '$invoice_number', '$count_products', 'NOW()', 
-'$status');";
+$insert_orders="INSERT into user_orders(order_id, amount_due, invoice_number, total_products, order_date, order_status) values ('$order_id', '$subtotal', '$invoice_number', '$count_products', 'NOW()', '$status');";
 $result_query=mysqli_query($con, $insert_orders);
 if($result_query){
     echo "<script>alert('Orders are submitted successfully')</script>";
     echo "<script>window.open('profile.php','_self')</script>";
 }
+
+//order pending
+$insert_pending_orders="INSERT into orders_pending 
+(order_id, invoice_number, product_id, quatity, order_status) values 
+('$order_id', '$invoice_number', '$product_id', '$quantity', '$status');";
+$result_pending_orders=mysqli_query($con, $insert_pending_orders);
+
+//delete items from cart
+$empty_cart="DELETE from cart_details where ip_address='$get_ip_address'";
+$result_delete=mysqli_query($con, $empty_cart);
+
 ?>
