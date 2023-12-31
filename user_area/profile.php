@@ -21,10 +21,15 @@ session_start();
       }
       .profile_img{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     margin: auto;
     display: block;
     object-fit: contain;
+}
+.edit_image{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
     </style>
 </head>
@@ -114,11 +119,12 @@ cart();
       <li class="nav-item bg-info">
         <a class="nav-link text-light" href="#"><h4>Your Profile</h4></a>
       </li>
+
       <?php 
       $username=$_SESSION['username'];
       $user_image="SELECT * from user_table where username='$username'";
-      $result_image=mysqli_query($con, $user_image);
-      $row_image=mysqli_fetch_array($result_image);
+      $user_image=mysqli_query($con, $user_image);
+      $row_image=mysqli_fetch_array($user_image);
       $user_image=$row_image['user_image'];
       echo "<li class='nav-item'>
       <img src='./user_images/$user_image' class='profile_img my-2'>
@@ -142,7 +148,23 @@ cart();
       </li>
     </ul>
   </div>
-  <div class="col-md-10"></div>
+  <div class="col-md-10 text-center">
+  <?php 
+  get_user_order_details();
+  
+  if(isset($_GET['edit_account'])){
+  include('edit_account.php');
+  }
+
+  if(isset($_GET['my_orders'])){
+    include('user_orders.php');
+    }
+
+    if(isset($_GET['delete_account'])){
+      include('delete_account.php');
+      }
+  ?>
+  </div>
 
 </div>
 

@@ -78,6 +78,7 @@ if(isset($_POST['user_login'])){
                 $_SESSION['username']=$user_username;
                 echo "<script>alert('Login Successful')</script>";
                 echo "<script>window.open('payment.php','_self')</script>";
+                
             }
         }else{
             echo "<script>alert('Invalid Credentials')</script>";
