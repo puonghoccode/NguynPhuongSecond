@@ -9,6 +9,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome <?php echo $_SESSION['username'] ?></title>
+    <link rel="icon" type="image/x-icon" href="../assets/illustration/favicon.ico">
+
     <!-- boostrap css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- fontawesome link -->
@@ -37,9 +39,9 @@ session_start();
     <!-- navbar -->
     <div class="container-fluid p-0">
         <!-- first child -->
-        <nav class="navbar navbar-expand-lg bg-info">
+        <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <img src="./assets/illustration/logo1.png" class="logo">
+  <img src="./assets/illustration/1.png" class="logo">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -95,7 +97,7 @@ cart();
                 <?php 
                 if(!isset($_SESSION['username'])){
                   echo "<li class='nav-item'>
-                  <a class='nav-link' href='./user_area/user_login.php'>Login</a>
+                  <a class='nav-link' href='user_login.php'>Login</a>
               </li>";
                 }else{
                   echo "<li class='nav-item'>
@@ -116,7 +118,7 @@ cart();
 <div class="row">
   <div class="col-md-2">
     <ul class="navbar-nav bg-secondary text-center" style="height: 100vh">
-      <li class="nav-item bg-info">
+      <li class="nav-item bg-dark">
         <a class="nav-link text-light" href="#"><h4>Your Profile</h4></a>
       </li>
 

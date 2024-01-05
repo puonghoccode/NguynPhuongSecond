@@ -8,6 +8,8 @@ include('../functions/common_function.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
+    <link rel="icon" type="image/x-icon" href="./assets/illustration/favicon.ico">
+
     <!-- boostrap css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- fontawesome link -->
@@ -16,13 +18,13 @@ include('../functions/common_function.php');
     <link rel="stylesheet" href="style.css">
     <style>
         .payment_img{
-            width: 90%;
+            width: 10cm;
             margin: auto;
             display: block;
         }
     </style>
 </head>
-<body>
+<body class='bg-dark'>
     <!-- php code to access user id  -->
     <?php 
     $user_ip=getIPAddress();
@@ -32,16 +34,21 @@ include('../functions/common_function.php');
     $user_id=$run_query['user_id'];
 
     ?>
-    <div class="container">
-        <h2 class="text-center text-info">Payment Option</h2>
+    <div class="container bg-dark">
+        <h2 class="text-center text-warning">Payment Option</h2>
         <div class="row d-flex justify-content-center align-items-center my-5">
             <div class="col-md-6">
                 <a href="https://www.paypal.com" target="_blank">
-                    <img src="../assets/illustration/18.png" alt="" class="payment_img">
+                    <img src="../assets/illustration/pay.jpg" alt="" class="payment_img">
+                    <h2 class='text-center text-warning'>Pay Online</h2>
                 </a>
+                
             </div>
             <div class="col-md-6">
-                <a href="order.php?user_id=<?php echo $user_id; ?>"><h2 class='text-center'>Pay Offline</h2></a>
+                <a href="order.php?user_id=<?php echo $user_id; ?>">
+                <img src="../assets/illustration/pay2.png" alt="" class="payment_img">
+                <h2 class='text-center text-warning'>Pay Offline</h2>
+            </a>
             </div>
         </div>
     </div>

@@ -10,7 +10,6 @@ if(isset($_GET['order_id'])){
     $invoice_number=$row_fetch['invoice_number'];
     $amount_due=$row_fetch['amount_due'];
     $invoice_number=$row_fetch['invoice_number'];
-    $invoice_number=$row_fetch['invoice_number'];
 }
 
 if(isset($_POST['confirm_payment'])){
@@ -25,6 +24,9 @@ if(isset($_POST['confirm_payment'])){
     }
     $update_orders="UPDATE user_orders set order_status='Complete' where order_id=$order_id";
     $result_orders=mysqli_query($con, $update_orders);
+
+    $delete_pending="DELETE from orders_pending where invoice_number='$invoice_number'";
+    $result_delete_pend=mysqli_query($con, $delete_pending);
 }
 
 
@@ -57,12 +59,12 @@ if(isset($_POST['confirm_payment'])){
             </div>
             <div class="form-outline my-4 text-center w-50 m-auto">
                 <select name="payment_mode" class="form-select m-auto" id="">
-                    <option value="">-- Select Payment Mode --</option>
-                    <option value="">UPI</option>
-                    <option value="">Netbanking</option>
-                    <option value="">Paypal</option>
-                    <option value="">Cash on Delivery</option>
-                    <option value="">Pay Offline</option>
+                    <option value="none">-- Select Payment Mode --</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Netbanking">Netbanking</option>
+                    <option value="Paypal">Paypal</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Pay Offline">Pay Offline</option>
                 </select>
             </div>
             <div class="form-outline my-4 text-center w-50 m-auto">

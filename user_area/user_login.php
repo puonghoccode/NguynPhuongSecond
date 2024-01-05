@@ -9,6 +9,8 @@ include('../functions/common_function.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User - Login</title>
+    <link rel="icon" type="image/x-icon" href="../assets/illustration/favicon.ico">
+
     <!-- boostrap css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- fontawesome link -->
@@ -16,37 +18,36 @@ include('../functions/common_function.php');
     
     <style>
         body{
-            overflow-x: hidden;
+            overflow: hidden;
+            background-color: #090F1B;
         }
     </style>
 </head>
 <body>
-    <div class="container-fluid my-3">
-        <h2 class="text-center">User Login</h2>
-        <div class="row d-flex align-items-center justify-content-center mt-5">
-            <div class="col-lg-12 col-xl-6">
+<div class="container-fluid text-light my-3">
+        <h2 class="text-center  mb-5">User Login</h2>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class='col-lg-6 col-xl-4'>
+                <img src="../assets/illustration/bunny.png" alt="User Registration" class='img-fluid'>
+            </div>
+            <div class='col-lg-6 col-xl-4'>
                 <form action="" method="post">
-                    <!-- username field -->
                     <div class="form-outline mb-4">
-                        <label for="user_username" class='form-label'>Username</label>
-                        <input type="text" name="user_username" id="user_username" class='form-control' 
-                        placeholder="Enter your username" autocomplete="off" required='required'>
+                        <label for="user_username" class="form-label" >Username</label>
+                        <input type="text" name="user_username" id="user_username" placeholder="Enter your username" required='required' class='form-control'>
                     </div>
-
-                    <!-- password field -->
                     <div class="form-outline mb-4">
-                        <label for="user_password" class='form-label'>Password</label>
-                        <input type="password" name="user_password" id="user_password" class='form-control' 
-                        placeholder="Enter your password" autocomplete="off" required='required'>
+                        <label for="user_password" class="form-label" >Password</label>
+                        <input type="password" name="user_password" id="user_password" placeholder="Enter your password" required='required' class='form-control'>
                     </div>
-
-                    <div class="mt-4 pt-2">
-                        <input type="submit" name="user_login" id="" value="Login" class='bg-info py-2 px-3 border-0'>
-                        <p class='small fw-bold mt-2 pt-1 mb-0'>Don't have an account? <a class="text-danger" href='user_registration.php'>Register</a></p>
-                    </div>
+                    <div>
+                        <input type="submit" value="Login" class='bg-warning py-2 px-3 border-0' name='user_login'>
+                        <p class="small fw-bold mt-2 pt-1 ">Don't have an account? <a href="user_registration.php" class='link-warning'>Register</a></p>
+                        </div>
                 </form>
             </div>
         </div>
+        
     </div>
 </body>
 </html>

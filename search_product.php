@@ -20,7 +20,7 @@ session_start();
     <!-- navbar -->
     <div class="container-fluid p-0">
         <!-- first child -->
-        <nav class="navbar navbar-expand-lg bg-info">
+        <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
     <img src="./assets/illustration/logo1.png" class="logo">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,7 +127,7 @@ cart();
     <div class="col-md-2 bg-secondary p-0">
         <!-- brands displayed -->
         <ul class="navbar-nav me-auto text-center">
-            <li class="nav-item bg-info">
+            <li class="nav-item bg-dark">
                 <a href="#" class="nav-link text-light">
                     <h4>Delivery Brands</h4>
                 </a>
@@ -140,7 +140,7 @@ cart();
 
         <!-- categories displayed -->
         <ul class="navbar-nav me-auto text-center">
-            <li class="nav-item bg-info">
+            <li class="nav-item bg-dark">
                 <a href="#" class="nav-link text-light">
                     <h4>Category</h4>
                 </a>

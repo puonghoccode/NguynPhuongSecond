@@ -9,6 +9,8 @@ include('functions/common_function.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Website - Cart details</title>
+    <link rel="icon" type="image/x-icon" href="./assets/illustration/favicon.ico">
+
     <!-- boostrap css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- fontawesome link -->
@@ -26,38 +28,38 @@ include('functions/common_function.php');
 </head>
 <body>
     <!-- navbar -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 bg-dark">
         <!-- first child -->
-        <nav class="navbar navbar-expand-lg bg-info">
+        <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <img src="./assets/illustration/logo1.png" class="logo">
+    <img src="./assets/illustration/1.png" class="logo">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link text-warning text-warning active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="display_all.php">Products</a>
+          <a class="nav-link text-warning" href="display_all.php">Products</a>
         </li>
         <?php 
         if(isset($_SESSION['username'])){
           echo "<li class='nav-item'>
-          <a class='nav-link' href='./user_area/profile.php'>My Account</a>
+          <a class='nav-link text-warning' href='./user_area/profile.php'>My Account</a>
         </li>";
         }else{
           echo "<li class='nav-item'>
-          <a class='nav-link' href='./user_area/user_registration.php'>Register</a>
+          <a class='nav-link text-warning' href='./user_area/user_registration.php'>Register</a>
         </li>";
         }
         ?>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link text-warning" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cart.php">
+          <a class="nav-link text-warning" href="cart.php">
             <i class="fa-solid fa-cart-shopping"></i>
             <sub>
               <?php 
@@ -77,19 +79,19 @@ cart();
 ?>
 
     <!-- second child -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
             <ul class="navbar-nav me-auto">
             <li class='nav-item'>
-                    <a class='nav-link' href='#'>Welcome Guest</a>
+                    <a class='nav-link text-dark' href='#'>Welcome Guest</a>
                 </li>
             <?php
                 if(!isset($_SESSION['username'])){
                   echo "<li class='nav-item'>
-                  <a class='nav-link' href='./user_area/user_login.php'>Login</a>
+                  <a class='nav-link text-dark' href='./user_area/user_login.php'>Login</a>
               </li>";
                 }else{
                   echo "<li class='nav-item'>
-                  <a class='nav-link' href='./user_area/logout.php'>Logout</a>
+                  <a class='nav-link text-dark' href='./user_area/logout.php'>Logout</a>
               </li>";
                 }
                 ?>
@@ -97,7 +99,7 @@ cart();
         </nav>
 
     <!-- third child -->
-<div class="bg-light">
+<div class="bg-dark">
     <h3 class="text-center">Hidden Store</h3>
     <p class="text-center">Communication is at the heart of e-commerce and community</p>
 </div>
@@ -159,16 +161,16 @@ cart();
                     <td><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></td>
                     <td>
                         <input type="submit" name="update_cart" id="" value="Update Cart" 
-                        class="bg-info px-3 py-2 border-0 mx-3">
+                        class="bg-warning px-3 py-2 border-0 mx-3">
                         <input type="submit" name="remove_cart" id="" value="Remove Cart" 
-                        class="bg-info px-3 py-2 border-0 mx-3">
+                        class="bg-warning px-3 py-2 border-0 mx-3">
                     </td>
                 </tr>
                 <?php
                   }
                 }
               }else{
-                echo "<h3 class='text-center text-danger'>Cart is empty</h3>";
+                echo "<h3 class='text-center text-warning'>Cart is empty</h3>";
               }
                 ?>
             </tbody>
@@ -182,15 +184,14 @@ cart();
           $result=mysqli_query($con, $cart_query);
           $result_count=mysqli_num_rows($result);
           if($result_count>0){
-            echo "<h4 class='px-3'>Subtotal: <strong class='text-info'>$total_price</strong></h4>
-        <input type='submit' name='continue_shopping' id='' 
-        value='Continue Shopping' class='bg-info px-3 py-2 border-0 mx-3'>
-        <button class='bg-secondary px-3 py-2 border-0'>
+            echo "<h4 class=' text-light px-3'>Subtotal: <strong class='text-light'>$total_price</strong></h4>
+        <input type='submit' name='continue_shopping' id='' value='Continue Shopping' class='bg-warning text-light px-3 py-2 border-0 mx-3'>
+        <button class='bg-warning text-light px-3 py-2 border-0'>
         <a href='./user_area/checkout.php' class='text-light'>Check Out</a>
         </button>";
           }else{
           echo "<input type='submit' name='continue_shopping' id='' 
-          value='Continue Shopping' class='bg-info px-3 py-2 border-0 mx-3'>";
+          value='Continue Shopping' class='bg-warning text-light px-3 py-2 border-0 mx-3'>";
           }
           if(isset($_POST['continue_shopping'])){
             echo "<script>window.open('index.php','_self')</script>";

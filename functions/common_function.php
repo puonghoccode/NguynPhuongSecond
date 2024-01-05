@@ -1,3 +1,8 @@
+<style>
+    .card{
+        width: 22rem;
+    }
+</style>
 <?php
 // including connect file
 //include('./includes/connect.php');
@@ -17,17 +22,17 @@ function getproducts(){
         $product_price=$row['product_price'];
         $category_id=$row['category_id'];
         $brand_id=$row['brand_id'];
-        echo "<div class='col-md-4 mb-2'>
-        <div class='card' style='width: 22rem;'>
-            <img src='./admin_area/product_image/$product_image1' class='card-img-top' alt='$product_title'>
+        echo "<div class='col-md-4 mb-2 mt-3'>
+        <div class='card bg-warning'>
+            <img src='./admin_area/product_image/$product_image1' class='card-img-top mt-3' alt='$product_title'>
             <div class='card-body'>
-                <h5 class='card-title'>$product_title</h5>
+                <h5 class='card-title text-center'>$product_title</h5>
                 <p class='card-text'>$description</p>
                 <p class='card-text'>Price: $product_price $</p>
                 <a href='index.php?add_to_cart=$product_id' 
-                class='btn btn-primary'>Add to cart</a>
+                class='btn btn-dark'>Add to cart</a>
                 <a href='product_details.php?product_id=$product_id' 
-                class='btn btn-primary'>View more</a>
+                class='btn btn-dark'>View more</a>
             </div>
         </div>
     </div>";
@@ -52,17 +57,17 @@ function get_all_products(){
         $product_price=$row['product_price'];
         $category_id=$row['category_id'];
         $brand_id=$row['brand_id'];
-        echo "<div class='col-md-4 mb-2'>
-        <div class='card' style='width: 22rem;'>
-            <img src='./admin_area/product_image/$product_image1' class='card-img-top' alt='$product_title'>
+        echo "<div class='col-md-4 mb-2 mt-3'>
+        <div class='card bg-warning'>
+            <img src='./admin_area/product_image/$product_image1' class='card-img-top mt-3' alt='$product_title'>
             <div class='card-body'>
-                <h5 class='card-title'>$product_title</h5>
+                <h5 class='card-title text-center'>$product_title</h5>
                 <p class='card-text'>$description</p>
                 <p class='card-text'>Price: $product_price $</p>
                 <a href='index.php?add_to_cart=$product_id' 
-                class='btn btn-primary'>Add to cart</a>
+                class='btn btn-dark'>Add to cart</a>
                 <a href='product_details.php?product_id=$product_id' 
-                class='btn btn-primary'>View more</a>
+                class='btn btn-dark'>View more</a>
             </div>
         </div>
     </div>";
@@ -93,17 +98,17 @@ function get_unique_categories(){
         $product_price=$row['product_price'];
         $category_id=$row['category_id'];
         $brand_id=$row['brand_id'];
-        echo "<div class='col-md-4 mb-2'>
-        <div class='card' style='width: 22rem;'>
-            <img src='./admin_area/product_image/$product_image1' class='card-img-top' alt='$product_title'>
+        echo "<div class='col-md-4 mb-2 mt-3'>
+        <div class='card bg-warning'>
+            <img src='./admin_area/product_image/$product_image1' class='card-img-top mt-3' alt='$product_title'>
             <div class='card-body'>
-                <h5 class='card-title'>$product_title</h5>
+                <h5 class='card-title text-center'>$product_title</h5>
                 <p class='card-text'>$description</p>
                 <p class='card-text'>Price: $product_price $</p>
                 <a href='index.php?add_to_cart=$product_id' 
-                class='btn btn-primary'>Add to cart</a>
+                class='btn btn-dark'>Add to cart</a>
                 <a href='product_details.php?product_id=$product_id' 
-                class='btn btn-primary'>View more</a>
+                class='btn btn-dark'>View more</a>
             </div>
         </div>
     </div>";
@@ -131,17 +136,17 @@ function get_unique_brands(){
         $product_price=$row['product_price'];
         $category_id=$row['category_id'];
         $brand_id=$row['brand_id'];
-        echo "<div class='col-md-4 mb-2'>
-        <div class='card' style='width: 22rem;'>
-            <img src='./admin_area/product_image/$product_image1' class='card-img-top' alt='$product_title'>
+        echo "<div class='col-md-4 mb-2 mt-3'>
+        <div class='card bg-warning'>
+            <img src='./admin_area/product_image/$product_image1' class='card-img-top mt-3' alt='$product_title'>
             <div class='card-body'>
-                <h5 class='card-title'>$product_title</h5>
+                <h5 class='card-title text-center'>$product_title</h5>
                 <p class='card-text'>$description</p>
                 <p class='card-text'>Price: $product_price $</p>
                 <a href='index.php?add_to_cart=$product_id' 
-                class='btn btn-primary'>Add to cart</a>
+                class='btn btn-dark'>Add to cart</a>
                 <a href='product_details.php?product_id=$product_id' 
-                class='btn btn-primary'>View more</a>
+                class='btn btn-dark'>View more</a>
             </div>
         </div>
     </div>";
@@ -159,7 +164,7 @@ function getbrands(){
             while ($row_data=mysqli_fetch_assoc($result_brands)){
                 $brand_title=$row_data['brand_title'];
                 $brand_id=$row_data['brand_id'];
-                echo "<li class='nav-item'>
+                echo "<li class='nav-item bg-secondary'>
                 <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
             </li>";
             }
@@ -198,17 +203,17 @@ function search_product(){
         $product_price=$row['product_price'];
         $category_id=$row['category_id'];
         $brand_id=$row['brand_id'];
-        echo "<div class='col-md-4 mb-2'>
-        <div class='card' style='width: 22rem;'>
-            <img src='./admin_area/product_image/$product_image1' class='card-img-top' alt='$product_title'>
+        echo "<div class='col-md-4 mb-2 mt-3'>
+        <div class='card bg-warning'>
+            <img src='./admin_area/product_image/$product_image1' class='card-img-top mt-3' alt='$product_title'>
             <div class='card-body'>
-                <h5 class='card-title'>$product_title</h5>
+                <h5 class='card-title text-center'>$product_title</h5>
                 <p class='card-text'>$description</p>
                 <p class='card-text'>Price: $product_price $</p>
                 <a href='index.php?add_to_cart=$product_id' 
-                class='btn btn-primary'>Add to cart</a>
+                class='btn btn-dark'>Add to cart</a>
                 <a href='product_details.php?product_id=$product_id' 
-                class='btn btn-primary'>View more</a>
+                class='btn btn-dark'>View more</a>
             </div>
         </div>
     </div>";
@@ -238,42 +243,41 @@ function view_details(){
         $product_price=$row['product_price'];
         $category_id=$row['category_id'];
         $brand_id=$row['brand_id'];
-        echo "<div class='col-md-4 mb-2'>
-        <div class='card' style='width: 22rem;'>
-        <img src='./admin_area/product_image/$product_image1' 
-        class='card-img-top' alt='$product_title'>
-        <div class='card-body'>
-            <h5 class='card-title'>$product_title</h5>
-            <p class='card-text'>$description</p>
-            <p class='card-text'>Price: $product_price $</p>
-            <a href='index.php?add_to_cart=$product_id' 
-                class='btn btn-primary'>Add to cart</a>
-            <a href='index.php' 
-            class='btn btn-primary'>Go home</a>
+        echo "<div class='col-md-4 mb-2 mt-3'>
+        <div class='card bg-warning'>
+            <img src='./admin_area/product_image/$product_image1' class='card-img-top mt-3' alt='$product_title'>
+            <div class='card-body'>
+                <h5 class='card-title text-center'>$product_title</h5>
+                <p class='card-text'>$description</p>
+                <p class='card-text'>Price: $product_price $</p>
+                <a href='index.php?add_to_cart=$product_id' 
+                class='btn btn-dark'>Add to cart</a>
+                <a href='product_details.php?product_id=$product_id' 
+                class='btn btn-dark'>View more</a>
+            </div>
         </div>
-    </div>
     </div>
     
     <div class='col-md-8 '>
             <div class='row'>
                 <div class='col-md-12'>
-                    <h4 class='text-center text-info mb-5'>Related images</h4>
+                    <h4 class='text-center text-light mb-5'>Related images</h4>
                 </div>
-                <div class='col-md-3'>
+                <div class='col-md-3 '>
                 <img src='./admin_area/product_image/$product_image2' 
-                class='card-img-top' alt='$product_title'>
+                class='card-img-top bg-dark' alt='$product_title'>
                 </div>
                 <div class='col-md-3'>
                 <img src='./admin_area/product_image/$product_image3' 
-                class='card-img-top' alt='$product_title'>
+                class='card-img-top bg-dark' alt='$product_title'>
                 </div>
                 <div class='col-md-3'>
                 <img src='./admin_area/product_image/$product_image4' 
-                class='card-img-top' alt='$product_title'>
+                class='card-img-top bg-dark' alt='$product_title'>
                 </div>
                 <div class='col-md-3'>
                 <img src='./admin_area/product_image/$product_image5' 
-                class='card-img-top' alt='$product_title'>
+                class='card-img-top bg-dark' alt='$product_title'>
                 </div>
             </div>
         </div>";
